@@ -54,10 +54,11 @@ void deleteTop(int * arr, int &size){
 
 void updateTop(int *arr, int &size, int value){
     if(size-1 == 0 && arr[size-1] == 0){
-        cout << "list is already empty" << endl;
+        arr[0] = value;
     }
-    else if(size == NULL){
-        cout << "list is empty" << endl;
+    else if(size < 0){
+        size++;
+        arr[size] = value;
     }
     else {
         arr[0] = value;
@@ -91,10 +92,14 @@ void deleteLast(int *arr, int &size){
 }
 
 void updateLast(int *arr, int &size, int value){
-    if(arr[size-1] == 0){
+    if(arr[size-1] == 0 ){
         arr[size-1] = value;
-    } else {
+    }
+    else if(size < 0){
         size++;
+        arr[size] = value;
+    }
+    else {
         arr[size-1] = value;
     }
 }
@@ -156,6 +161,26 @@ void deleteRandom(int *arr, int &size, int value){
     }
 }
 
+void updateRandom( int * arr, int &size, int value){
+    bool status = false;
+    int newValue;
+    cout << "Enter new value that you want update : ";
+    cin>>newValue;
+    for(int i = 0; i< size; i++){
+        if(arr[i] == value){
+            status = true;
+            arr[i] = newValue;
+        }
+    }
+    if(status == false){
+        cout << "This value is not present in the array" << endl;
+        return;
+    } else {
+        cout << "Updated list successfully" << endl;
+        return;
+    }
+}
+
 void initArray(int *arr, int &size){
         for(int i = 0; i < size; i++){
         *(arr+i) = 0;
@@ -187,9 +212,11 @@ int main(){
         cout << "\n4. Delete new element from top position "<< endl; 
         cout << "\n5. Delete new element to last position " << endl;
         cout << "\n6. Delete new element to random positon " << endl;
-        cout << "\n6. Update top element from array " << endl;
-        cout << "\n7. Display Array" << endl;
-        cout << "\n8. Exit" << endl;
+        cout << "\n7. Update top element from array " << endl;
+        cout << "\n8. Update last element from array " << endl;
+        cout << "\n9. Update random element from array " << endl;
+        cout << "\n10. Display Array" << endl;
+        cout << "\n11. Exit" << endl;
         int con, value;
         cout << "choose an option from above options : ";
 
@@ -218,25 +245,34 @@ int main(){
             case 5:            
                     deleteLast(arr, ::size);
                     break;
-            case 6:            
+            case 6:  
+                    cout << "Enter the value that you want to delete in array : ";
+                    cin>>value;          
+                    deleteRandom(arr, ::size, value);
+                    break;
+            case 7:            
                     cout << "Enter the value that you want to update in array : ";
                     cin>>value;
                     updateTop(arr, ::size, value);
                     break;
-            case 7:            
-                    cout << "Enter the value that you want to deletes from array : ";
+            case 8:            
+                    cout << "Enter the value that you want to update from array : ";
                     cin>>value;
-                    updateTop(arr, ::size, value);
+                    updateLast(arr, ::size, value);
                     break;
-            case 7:
-                displayArray(arr,::size);
-                break;
-            case 8:
-                conn = false;
-                exit(1);
-                break;
+            case 9:            
+                    cout << "Enter the value that you want to update from array : ";
+                    cin>>value;
+                    updateRandom(arr, ::size, value);
+                    break;
+            case 10:
+                    displayArray(arr,::size);
+                    break;
+            case 11:
+                    conn = false;
+                    exit(1);
             default:
-                cout << "please choose correct option from menu";
+                    cout << "please choose correct option from menu";
 
         }
     }
