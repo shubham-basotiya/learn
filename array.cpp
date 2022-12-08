@@ -13,8 +13,8 @@ void displayArray(int *arr, int &size){
         cout << "List is empty"<<endl;
         return;
     }
-    for(int i = 0; i< size; i++){
-        cout << "arr[" << i << "] = " <<*(arr+i) << endl;
+    for(int i = 0; i< ::size; i++){
+        cout << "arr[" << i << "] = " << arr[i] << endl;
     }
     cout << endl;
 }
@@ -181,23 +181,29 @@ void updateRandom( int * arr, int &size, int value){
     }
 }
 
-void initArray(int *arr, int &size){
-        for(int i = 0; i < size; i++){
-        *(arr+i) = 0;
-    }
-}
+// void initArray(int *arr){
+
+
+//         for(int i = 0; i < ::size; i++){
+//             cout <<"arr["<< i << "] = " << arr[i] << endl;
+//         }
+// }
 
 
 int main(){
     
+    // cout << "intial array" << endl;
+
     // Dynamic array
 
     cout << "Enter the size of array :";
     cin>>::size;
 
-    arr = new int[::size];
+    arr = new int[::size]; 
 
-    initArray(arr, ::size);
+    for(int i = 0; i < ::size; i++){
+        *(arr+i) = 0;
+    }
 
     // for(int i= 0; i < n; i++){
     //     cout << "Address of arr[" << i << "] = " << arr+i << " and value of arr[" << i << "] = " <<  *(arr+i) << endl;

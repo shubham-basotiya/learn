@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 #include <Windows.h>
+#include <cstdlib>
 using namespace std;
 
 /*
@@ -330,7 +332,7 @@ int fact(int n){
         //     return n*n*n;
         // }
 
-    int main(){
+    // int main(){
     
     // int (*fptr)(int , int);
 
@@ -363,12 +365,229 @@ int fact(int n){
     //     cout << n << " is not a armstrong number" << endl;
     // }
 
-    string string;
+    // string string;
 
-    string = "Hello World";
+    // string = "Hello World";
 
-    cout << "string = " << string << endl;
+    // cout << "string = " << string << endl;
+
+    // void *pi = NULL ;
+
+    // int i = 4;
+
+    // pi = &i;
+
+    // cout << "integer value pi " << &i << " = " <<  *(typeid(i).name() *)pi << endl;
+
+    // cout << typeid(i).name() << endl;
+
+    // int main(){
+
+    // int n;
+    // cout << "enter the size of array : ";
+    // cin>>n;
+
+    // // int *pi = (int *)malloc(n*sizeof(int));
+    // int *pi = (int *)calloc(n, sizeof(int));
+
+    // for(int i = 0; i < n; i++){
+    //     cout << "pi["<<i<<"]= " << pi[i] << endl;
+    // }
+
+    // for(int i = 0; i < n; i++){
+    //     cin>>pi[i];
+    // }
+
+    // for(int i = 0; i < n; i++){
+    //     cout << "pi["<<i<<"]= " << pi[i] << endl;
+    // }
 
 
-    return 0;
-}  
+    // int main(){
+
+    //     int n;
+
+    //     cout << "Enter your name : ";
+    //     cin
+    //     cout << "Enter the size of string : ";
+    //     cin>>n;
+
+    //     char *cs = (char *)malloc(n*sizeof(char));
+
+    // int main(){
+
+        // int n;
+
+        // cout << "Enter the number of row : ";
+        // cin>>n;
+
+        // for(int i = n; i >= 1;i--){
+        //     for(int j = 1; j <= n; j++){
+        //         if(j >= i){
+        //             cout << j;
+        //         } else {
+        //             cout << " ";
+        //         }
+        //     }
+        //     for(int k = n-1; k >= i; k--){
+        //         cout << k ;
+        //     }
+        //     cout<<endl;
+        // }
+
+    // struct node{
+    //     int data;
+    //     struct node* link;
+    // };
+
+    // void addBeg(struct node ** head, int value){
+    //     struct node * newNode = (struct node *)malloc(sizeof(struct node));
+    //     newNode->data = value;
+    //     newNode->link = NULL;
+
+    //     if(head == NULL){
+    //         *head = newNode;
+    //     }
+    //     else{
+    //         newNode->link = *head;
+    //         *head = newNode;
+    //     }
+    // }
+
+    // void addLast(struct node ** head, int value){
+    //     struct node * newNode = (struct node *)malloc(sizeof(struct node));
+    //     newNode->data = value;
+    //     newNode->link = NULL;
+
+    //     struct node * temp = *head;
+
+    //     while(temp->link != NULL){
+    //         cout << temp->data << " ";
+    //         temp = temp->link;
+    //     }
+    //     temp->link = newNode;
+    // }
+
+    // void displayList(struct node * head){
+    //     struct node * temp = head;
+
+    //     while(temp != NULL){
+    //         cout << temp->data << " ";
+    //         temp = temp->link;
+    //     }
+    // }
+
+    // int main(){
+
+    //     struct node * head = NULL;
+    //     // struct node * newNode = (struct node *) malloc(sizeof(struct node));
+
+    //     // cout << head << endl;
+
+    //     // newNode->data = 40;
+    //     // newNode->link = NULL;
+    //     // head = newNode;
+
+    //     // cout << head << endl;
+    //     // cout << head->data << " " << head->link << endl;
+    //     // cout << head->data << head->link << endl;
+
+    //     bool status = true;
+
+    //     while(status){
+    //         cout << "1. Add new element at beginning." << endl;
+    //         cout << "2. Add new element at last." << endl;
+    //         cout << "3. Display Element" << endl;
+    //         cout << "4. Exit" << endl;
+
+    //         int opt, value;
+    //         cout << "Choose any option from above option : ";
+    //         cin>>opt;
+
+    //         switch(opt){
+    //             case 1:
+    //                     cout << "Enter the value at the beginning og list : ";
+    //                     cin>>value;
+    //                     addBeg(&head, value);
+    //                     break;
+    //             case 2:
+    //                     cout << "Enter the value at the end of list : ";
+    //                     cin>>value;
+    //                     addLast(&head, value);
+    //                     break;
+    //             case 3:
+    //                     displayList(head);
+    //                     break;
+    //             case 4:
+    //                     exit(1);
+    //             default:
+    //                     cout<< "Please correct option from above options" << endl;
+    //         }
+    //     }
+
+//     int main(){
+
+//         int i=2,j=2,counter=0;
+//         while(i<=100)
+//         {
+//             cout << endl;
+//             while(j<=100)
+//             {
+//                 if(j%i==0){
+//                     cout << i << endl;
+//                     counter++;
+//                 }
+//                 j++;
+
+//             }
+//                 i++;
+//                 if(counter==20) {
+//                     break;     
+//                 }
+//         }
+//     return 0;
+// }  
+
+// int main(){
+
+//     cout << "check armstrong number " << endl;
+//     int n, sum = 0;
+//     cout << "Enter number :";
+//     cin>>n;
+//     int demo_var = n;
+//     while(n){
+//     int r = n%10;
+//     sum = sum + (r * r * r);
+//     n = n/10;
+//     }
+//     if(sum == demo_var) {
+//         cout << "Entered number is a armstrong number";
+//     }
+//     else{
+//         cout << "entered number is not a armstrong number";
+//     }
+
+//     return 0;
+
+// }
+
+// int main(){
+
+//     cout << "Reverse of a number" << endl;
+//     int n;
+//     cout << "Enter the number : ";
+//     cin>>n;
+
+//     int demo_var = n;
+
+//     int rev = 0;
+
+//     while(n){
+//         int rem = n%10;
+//         rev = rev * 10 + rem;
+//         n = n/10;
+//     }
+
+//     cout << "Reverse of number " << demo_var << " = " << rev << endl;
+//     return 0;
+// }
